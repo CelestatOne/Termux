@@ -6,6 +6,7 @@ pkg install x11-repo
 # Обновляем пакеты и устанавливаем нужные программы
 apt update
 apt upgrade -y
+apt update
 apt install -y python wget curl nano git which mc geckodriver clang libxml2 libxslt
 pip install selenium beautifulsoup4 requests cython lxml
 
