@@ -6,15 +6,9 @@ pkg install x11-repo
 # Обновляем пакеты и устанавливаем нужные программы
 apt update
 apt upgrade -y
-apt install -y python wget curl nano git which mc
+apt install -y python wget curl nano git which mc geckodriver clang libxml2 libxslt
+pip install selenium beautifulsoup4 requests cython lxml
 
-# Проверяем успешность установки
-if [[$? -ne 0]]; then
-echo "Ошибка при установке необходимых программ"
-exit 1
-fi
-
-# Добавляем выполнение дополнительных команд по необходимости
 echo "Установка завершена!"
 
 
@@ -30,9 +24,9 @@ export EDITOR=nano #сделать nano — редактором по умолч
 
 # выводим сообщение об успешном выполнении скрипта
 echo "Текст добавлен в ~/bashrc"
-
 # создаем строку с текстом для добавления в файл
 echo "terminal-transcript-rows=10000 #отображать в CLI 10к строк вместо 2к (доступно с v0.114+)
+
 terminal-onclick-url-open = true #понимать url(s) в CLI (доступно с v0.118+)
 " >> ~/.termux/termux.properties
 
